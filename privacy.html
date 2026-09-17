@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mk24 개인정보처리방침</title>
+  <style>
+    :root { --bg: #ffffff; --fg: #1a1a1a; --muted: #555; --link: #0b5cad; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111; --fg: #eee; --muted: #aaa; --link: #6fb6ff; } }
+    body { background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; margin: 0; }
+    main { max-width: 720px; margin: 0 auto; padding: 32px 16px; }
+    h2 { margin-top: 32px; font-size: 20px; }
+    .muted { color: var(--muted); font-size: 14px; }
+    a { color: var(--link); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Mk24 개인정보처리방침</h1>
+  <p class="muted">시행일: 2026-09-17</p>
+
+  <h2>1. 개요</h2>
+  <p>Mk24 앱(패키지 <code>com.khil.mk24</code>, 이하 "앱")은 개인이 제작한 차량용 보조배터리 Mk.24와 통신하는 앱입니다. 앱 개발자는 사용자 정보를 받거나 저장하는 서버를 운영하지 않으며, 광고·분석 도구를 사용하지 않습니다.</p>
+  <p><strong>이 앱은 개발자 본인만 사용하기 위한 개인용 앱입니다.</strong> 공개 배포하지 않으며(앱 스토어 등록·설치 파일 제공 없음), 다른 사람의 사용, 복제, 수정, 재배포를 허용하지 않습니다. 따라서 이 방침에서 말하는 "사용자"는 개발자 본인입니다.</p>
+
+  <h2>2. 앱이 다루는 정보</h2>
+  <ul>
+    <li><strong>기기 데이터</strong>: Mk.24에서 Bluetooth로 받은 전압, 전류, 잔량, 온도, 충격·폴트 기록, 설정값, 백업값. 휴대폰 안에만 저장됩니다.</li>
+    <li><strong>앱 설정</strong>: 등록한 기기의 Bluetooth 주소, 기기 암호, Telegram 봇 토큰·채팅 ID. 휴대폰 안에 저장되며 암호와 토큰은 Android Keystore로 암호화됩니다.</li>
+    <li><strong>Google 계정</strong>: 사용자가 Google 연동을 켠 경우에만, Google Sheets 기록을 위해 사용합니다 (3항).</li>
+  </ul>
+  <p>앱은 위치, 연락처, 사진 등 다른 개인정보에 접근하지 않습니다.</p>
+
+  <h2>3. Google 사용자 데이터</h2>
+  <ul>
+    <li>앱은 <code>https://www.googleapis.com/auth/drive.file</code> 권한만 요청합니다. 이 권한으로는 <strong>앱이 직접 만든 파일에만</strong> 접근할 수 있고, 사용자 Drive의 다른 파일은 볼 수 없습니다.</li>
+    <li>사용 목적: 사용자 본인 Drive에 Mk24 기록용 스프레드시트를 만들고 기기 데이터 요약·이벤트·백업을 추가하는 것뿐입니다.</li>
+    <li>이 데이터는 사용자 기기와 사용자 본인의 Google 계정 사이에서만 오가며, 개발자나 제3자에게 전송·공유·판매되지 않습니다.</li>
+    <li>Mk24 앱의 Google API 사용과 Google API에서 받은 정보의 처리는 Limited Use 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>를 따릅니다.</li>
+  </ul>
+
+  <h2>4. Telegram</h2>
+  <p>사용자가 Telegram 알림을 설정하면, 충격·폴트 발생 시 알림 문구를 Telegram Bot API(<code>api.telegram.org</code>)를 통해 사용자가 입력한 봇과 채팅으로 보냅니다. 이 전송에는 <a href="https://telegram.org/privacy">Telegram 개인정보처리방침</a>이 적용됩니다.</p>
+
+  <h2>5. 권한</h2>
+  <ul>
+    <li>근처 기기(Bluetooth 연결): Mk.24와 통신</li>
+    <li>알림: 연결 상태·충격·폴트 알림</li>
+    <li>생체 인증/화면 잠금: 로그 삭제·데이터 초기화·기기 복원 전 본인 확인 (인증 정보는 앱이 받지 않음)</li>
+  </ul>
+
+  <h2>6. 보관과 삭제</h2>
+  <ul>
+    <li>휴대폰 안의 데이터는 앱 설정의 로그 삭제·DB 리셋 또는 앱 삭제로 지울 수 있습니다.</li>
+    <li>Google Drive에 만들어진 스프레드시트는 사용자 계정의 파일이므로 사용자가 Drive에서 직접 삭제할 수 있습니다.</li>
+    <li>Google 연동 권한은 앱 설정 또는 <a href="https://myaccount.google.com/permissions">Google 계정 → 서드파티 액세스</a>에서 언제든 해제할 수 있습니다.</li>
+  </ul>
+
+  <h2>7. 변경과 문의</h2>
+  <p>이 방침이 바뀌면 이 페이지에 시행일과 함께 게시합니다. 문의는 <a href="https://github.com/TomatoAndBanana/mk24/issues">GitHub Issues</a>로 해주세요.</p>
+
+  <hr>
+  <p class="muted"><strong>English summary.</strong> Mk24 is a personal app intended solely for the developer's own use. It is not publicly distributed, and use, copying, modification or redistribution by anyone else is not permitted. Mk24 does not operate any server and does not collect personal data. Device data stays on the phone. If the user enables Google integration, the app requests only the <code>drive.file</code> scope to create and append to spreadsheets in the user's own Google Drive; this data is not shared with the developer or third parties. Mk24's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Optional Telegram alerts are sent to the bot and chat configured by the user. Access can be revoked at any time at myaccount.google.com/permissions.</p>
+</main>
+</body>
+</html>
